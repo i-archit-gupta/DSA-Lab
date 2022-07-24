@@ -1,9 +1,9 @@
-//.WAP Input N element into an array.find out sum of all even number and multiply all odd no.
+// WAP to display the array elements in ascending order.
 #include <stdio.h>
 
 int main()
 {
-    int n, i, j;
+    int n, i, j, z;
     printf("Enter the no. of elements you want in an array: ");
     scanf("%d", &n);
     int arr[n];
@@ -11,6 +11,23 @@ int main()
     {
         printf("Enter the value of element %d: ", i + 1);
         scanf("%d", &arr[i]);
+    }
+    for (i = 0; i < n; i++)
+    {
+        for (j = i; j < n; j++)
+        {
+            if (arr[i] > arr[j])
+            {
+                z = arr[i];
+                arr[i] = arr[j];
+                arr[j] = z;
+            }
+        }
+    }
+    printf("The elements in ascending order is:\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
     }
 
     return 0;
