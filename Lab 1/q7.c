@@ -2,7 +2,7 @@
 #include <stdio.h>
 int main()
 {
-    int n, k, i, flag = 0;
+    int n, k, i, j, flag = 0;
     printf("Enter the no. of elements you want in an array: ");
     scanf("%d", &n);
     int arr[n];
@@ -23,8 +23,11 @@ int main()
         if (k == arr[i])
         {
             flag = 1;
-            arr[i] = arr[i + 1];
-            n = n - 1;
+            for (j = i; j < n; j++)
+            {
+                arr[j] = arr[j + 1];
+            }
+            n--;
         }
     }
     if (flag == 0)

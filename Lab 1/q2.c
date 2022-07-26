@@ -2,13 +2,16 @@
 #include <stdio.h>
 int main()
 {
-    int arr[5], i, sum;
-    printf("Enter 5 values of the array:\n\n");
-    for (i = 0; i < 5; i++)
+    int n, i, sum = 0;
+    printf("Enter the no. of elements you want in an array: ");
+    scanf("%d", &n);
+    int arr[n];
+    for (i = 0; i < n; i++)
     {
-        printf("Value at index %d\n", i);
+        printf("Enter the value of element %d: ", i + 1);
         scanf("%d", &arr[i]);
         sum = sum + arr[i];
     }
     printf("The sum of the elements of the array is : %d", sum);
+    return 0;
 }

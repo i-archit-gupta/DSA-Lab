@@ -3,18 +3,29 @@
 
 int main()
 {
-    int arr[8], min, max, i;
-    printf("Enter the elements in the array:\n\n");
-    for (i = 0; i < 8; i++)
+    int n, i, min, max;
+    printf("Enter the no. of elements you want in an array: ");
+    scanf("%d", &n);
+    int arr[n];
+    for (i = 0; i < n; i++)
     {
-        printf("Enter the element at index %d: ", i);
+        printf("Enter the value of element %d: ", i + 1);
         scanf("%d", &arr[i]);
-        min = max = arr[0];
+    }
+    printf("\nThe array is: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    min = max = arr[0];
+    for (i = 0; i < n; i++)
+    {
         if (min > arr[i])
             min = arr[i];
         if (max < arr[i])
             max = arr[i];
     }
-    printf("The minimum element of the array is: %d\n\nThe maximum element of the array is: %d", min, max);
+    printf("\n\nThe minimum element of the array is: %d\n\nThe maximum element of the array is: %d", min, max);
     return 0;
 }

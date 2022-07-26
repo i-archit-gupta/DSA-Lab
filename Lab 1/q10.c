@@ -1,8 +1,8 @@
-// WAP to remove duplicates from the Array.
+// WAP to store numbers into an array of n integers, where the array must contain some duplicates.Find out the most repeating element in the array.
 #include <stdio.h>
 int main()
 {
-    int n, i, j, k, flag = 0;
+    int n, i, j, c = 0, max_c = 0, max_e, flag = 0;
     printf("Enter the no. of elements you want in an array: ");
     scanf("%d", &n);
     int arr[n];
@@ -19,29 +19,26 @@ int main()
     printf("\n");
     for (i = 0; i < n; i++)
     {
+        c = 1;
         for (j = i + 1; j < n; j++)
         {
             if (arr[i] == arr[j])
             {
-                for (k = j; k < n - 1; k++)
+                c++;
+                if (c > max_c)
                 {
-                    arr[k] = arr[k + 1];
+                    flag = 1;
+                    max_c = c;
+                    max_e = arr[i];
                 }
-                j--;
-                n--;
-                flag = 1;
             }
         }
     }
     if (flag == 1)
     {
-        printf("\n\nThe New array removing duplicates is: ");
-        for (i = 0; i < n; i++)
-        {
-            printf("%d ", arr[i]);
-        }
+        printf("\n\nThe most occuring element in the array is: %d ", max_e);
     }
     else
-        printf("No Duplicate Element found.");
+        printf("There is no recurring element in the array.");
     return 0;
 }
